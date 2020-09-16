@@ -3,6 +3,7 @@ import 'package:x_gym/screens/login_screen.dart';
 import 'package:x_gym/widgets/widgets_library.dart';
 
 import 'screens/login_screen.dart';
+import 'screens/login_screen.dart';
 
 void main() {
   runApp(MyApp());
