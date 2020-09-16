@@ -1,0 +1,1 @@
+export 'package:x_gym/widgets/global/default_background.dart';
