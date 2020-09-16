@@ -3,7 +3,8 @@
 * */
 
 import 'package:flutter/material.dart';
-import 'package:x_gym/styles/Pallete.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:x_gym/styles/pallete.dart';
 
 class InputFormField extends StatelessWidget {
 
@@ -24,33 +25,45 @@ class InputFormField extends StatelessWidget {
   // field
   final keyboardType;
 
+  final IconData iconData;
+
   // this will descide whether to scecure the inpur
   // or not
   final obscureText;
 
-
-  InputFormField(this.label, this.hint, this.controller, this.keyboardType,
-      this.obscureText);
+  const InputFormField({Key key, this.label, this.hint, this.controller, this.keyboardType, this.obscureText = false, this.iconData}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: TextStyle(
+        color: Colors.white54
+      ),
       obscureText: obscureText,
       keyboardType: keyboardType,
       controller: controller,
       decoration: InputDecoration(
+        prefixIcon: Icon(iconData,color: Colors.white,),
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: Pallete.DefaultThemeColour,
-            width: 4,
+            color: Colors.white,
+            width: 3,
           )
         ),
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: Pallete.DefaultThemeColour,
+            color: Colors.white,
+            width: 4
           ),
         ),
         labelText: label,
+        labelStyle: GoogleFonts.poppins(
+          color: Colors.white,
+          fontSize: 18
+        ),
+        counterStyle: GoogleFonts.poppins(
+          color: Colors.white,
+        ),
         hintText: hint,
       ),
     );
