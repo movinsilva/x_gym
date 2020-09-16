@@ -150,7 +150,7 @@ class LoginScreen extends StatelessWidget {
                 height: 50,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Container(
                     height: 5,
@@ -177,7 +177,7 @@ class LoginScreen extends StatelessWidget {
                     icon: Icon(
                       MdiIcons.facebook,
                       color: Colors.white,
-                      size: 35,
+                      size: 34,
                     ),
                     onPressed: () {},
                   ),
@@ -193,7 +193,7 @@ class LoginScreen extends StatelessWidget {
                     icon: Icon(
                       MdiIcons.linkedin,
                       color: Colors.white,
-                      size: 35,
+                      size: 38,
                     ),
                     onPressed: () {},
                   ),
