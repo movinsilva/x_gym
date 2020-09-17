@@ -35,36 +35,39 @@ class InputFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      style: TextStyle(
-        color: Colors.white54
-      ),
-      obscureText: obscureText,
-      keyboardType: keyboardType,
-      controller: controller,
-      decoration: InputDecoration(
-        prefixIcon: Icon(iconData,color: Colors.white,),
-        focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.white,
-            width: 3,
-          )
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal:25.0, vertical: 6),
+      child: TextFormField(
+        style: TextStyle(
+          color: Colors.white54
         ),
-        enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.white,
-            width: 4
+        obscureText: obscureText,
+        keyboardType: keyboardType,
+        controller: controller,
+        decoration: InputDecoration(
+          prefixIcon: Icon(iconData,color: Colors.white,),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.white,
+              width: 3,
+            )
           ),
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.white,
+              width: 4
+            ),
+          ),
+          labelText: label,
+          labelStyle: GoogleFonts.poppins(
+            color: Colors.white,
+            fontSize: 18
+          ),
+          counterStyle: GoogleFonts.poppins(
+            color: Colors.white,
+          ),
+          hintText: hint,
         ),
-        labelText: label,
-        labelStyle: GoogleFonts.poppins(
-          color: Colors.white,
-          fontSize: 18
-        ),
-        counterStyle: GoogleFonts.poppins(
-          color: Colors.white,
-        ),
-        hintText: hint,
       ),
     );
   }

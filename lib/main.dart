@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:x_gym/screens/login_screen.dart';
+import 'package:x_gym/screens/register_screen.dart';
 import 'package:x_gym/widgets/widgets_library.dart';
 
 import 'screens/login_screen.dart';
@@ -13,6 +14,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        "/register" : (context) => RegisterScreen(),
+      },
       home: LoginScreen(),
     );
   }
