@@ -47,6 +47,19 @@ class RegisterPageView extends StatelessWidget {
               children: <Widget>[
                 Row(
                   children: <Widget>[
+                    Expanded(
+                      flex: 1,
+                      child:
+                      InputFormField(
+                        label: "First Name",
+                      )
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: InputFormField(
+                        label: "Last Name",
+                      ),
+                    )
                   ],
                 ),
                 InputFormField(
@@ -54,7 +67,28 @@ class RegisterPageView extends StatelessWidget {
                   hint: "Leave it if you are below 18",
                 ),
                 InputFormField(
+                  label: "Phone",
+                ),
+                InputFormField(
+                  label: "Email",
+                ),
+                InputFormField(
+                  label: "Password",
+                  obscureText: true,
+                ),
+                InputFormField(
+                  label: "Confirm Password",
+                  obscureText: true,
+                ),
+                InputFormField(
                   label: "Address",
+                ),
+                InputFormField(
+                  label: "Country",
+                ),
+                InputFormField(
+                  label: "Birthday",
+                  keyboardType: TextInputType.datetime,
                 )
               ],
             ),

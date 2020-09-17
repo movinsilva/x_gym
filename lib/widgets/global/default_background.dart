@@ -99,7 +99,7 @@ class DefaultScaffold extends StatelessWidget {
                       Expanded(flex: 3, child: Image.asset("assets/black_logo.png"))
                     ],
                   ),
-                  // Expanded(child: interior)
+                  interior,// Expanded(child: interior)
                 ],
               )),
         ),
