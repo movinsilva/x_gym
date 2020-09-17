@@ -4,7 +4,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:x_gym/styles/pallete.dart';
+import 'package:x_gym/styles/Pallete.dart';
+
 
 class InputFormField extends StatelessWidget {
 
@@ -38,6 +39,7 @@ class InputFormField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal:25.0, vertical: 6),
       child: TextFormField(
+        cursorColor: Pallete.DefaultThemeColour,
         style: TextStyle(
           color: Colors.white54
         ),

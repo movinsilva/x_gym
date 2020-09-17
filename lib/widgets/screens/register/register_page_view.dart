@@ -89,7 +89,7 @@ class RegisterPageView extends StatelessWidget {
                 InputFormField(
                   label: "Birthday",
                   keyboardType: TextInputType.datetime,
-                )
+                ),
               ],
             ),
           ),
