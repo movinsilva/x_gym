@@ -23,7 +23,7 @@ class DrawerTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(iconData),
+      leading: Icon(iconData, color: Colors.white,),
       title: Text(
         title,
         style: GoogleFonts.poppins(
