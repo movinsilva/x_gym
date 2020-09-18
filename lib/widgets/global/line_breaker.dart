@@ -13,8 +13,11 @@ class LineBreaker extends StatelessWidget {
     // get the current display size
     final size = MediaQuery.of(context).size;
 
-    return SizedBox(width: 2, height: 2, child: Container(
-        color: Colors.grey.withOpacity(0.8)
-    ),);
+    return Padding(
+      padding: const EdgeInsets.only(left: 60, right: 50),
+      child: SizedBox(width: 2, height: 2, child: Container(
+          color: Colors.grey.withOpacity(0.8)
+      ),),
+    );
   }
 }
