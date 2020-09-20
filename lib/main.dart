@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:x_gym/screens/dashboard.dart';
+import 'package:x_gym/screens/diet.dart';
 import 'package:x_gym/screens/login_screen.dart';
 import 'package:x_gym/screens/register_screen.dart';
 import 'package:x_gym/widgets/widgets_library.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/register" : (context) => RegisterScreen(),
         "/dashboard" : (context) => Dashboard(),
+        "/diet" : (context) => DietPage(),
       },
       home: LoginScreen(),
     );

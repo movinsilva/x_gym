@@ -77,7 +77,7 @@ class _DefaultScaffoldState extends State<DefaultScaffold> {
       "/dashboard",
       "/dashboard",
       "/dashboard",
-      "/dashboard",
+      "/diet",
       "/dashboard",
       "/dashboard",
       "/dashboard",
@@ -154,7 +154,12 @@ class _DefaultScaffoldState extends State<DefaultScaffold> {
                     Expanded(flex: 3, child: Image.asset("assets/black_logo.png"))
                   ],
                 ),
-                widget.interior, // Expanded(child: interior)
+                SizedBox(
+                  height: 15,
+                ),
+                Expanded(
+                  child: widget.interior,
+                ), // Expanded(child: interior)
               ],
             )),
       ),
