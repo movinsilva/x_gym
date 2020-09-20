@@ -83,7 +83,7 @@ class _DefaultScaffoldState extends State<DefaultScaffold> {
       "/dashboard",
       "/dashboard",
       "/dashboard",
-      "/dashboard",
+      "/notices",
       "/dashboard",
       "/dashboard",
       "/dashboard",
