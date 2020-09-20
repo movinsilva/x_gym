@@ -138,7 +138,7 @@ class _DefaultScaffoldState extends State<DefaultScaffold> {
                             child: Padding(
                               padding: const EdgeInsets.only(left: 16, right: 25, top: 3, bottom: 3),
                               child: Text(
-                                "Title",
+                                widget.title,
                                 maxLines: 1,
                                 style: GoogleFonts.poppins(
                                   color: Colors.white,
@@ -241,6 +241,7 @@ class _DefaultScaffoldState extends State<DefaultScaffold> {
                         title: drawer_titles[index],
                         iconData: drawer_icons[index],
                         onTap: () {
+                          RuntimeConstants.currentPageName = drawer_titles[index];
                             RuntimeConstants.selectIndex = index;
                             Navigator.of(context).pushReplacementNamed(drawer_routes[index]);
                         },
