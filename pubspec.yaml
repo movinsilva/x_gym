@@ -22,6 +22,7 @@ dependencies:
   # for database and file management
   sqflite:
   path:
+  path_provider:
 
 dev_dependencies:
   flutter_test:
