@@ -82,7 +82,7 @@ class _DefaultScaffoldState extends State<DefaultScaffold> {
       "/dashboard",
       "/dashboard",
       "/dashboard",
-      "/dashboard",
+      "/promotions",
       "/notices",
       "/dashboard",
       "/dashboard",
@@ -90,6 +90,7 @@ class _DefaultScaffoldState extends State<DefaultScaffold> {
     ];
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       key: scaffoldKey,
       body: FittedBox(
         fit: BoxFit.contain,

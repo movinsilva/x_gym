@@ -7,23 +7,17 @@ class SelectDietAlertDialog extends StatelessWidget {
   // contain the contain widget
   // for the body of the alert dialog
   final content;
+  // actions for the popup
+  final actions;
 
-  const SelectDietAlertDialog({Key key, this.title, this.content}) : super(key: key);
+  const SelectDietAlertDialog({Key key, this.title, this.content, this.actions}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return CupertinoAlertDialog(
-      title: Text(title),
+      title: title,
       content: content,
-      actions: <Widget>[
-        new FlatButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          textColor: Theme.of(context).primaryColor,
-          child: const Text('Okay, got it!'),
-        ),
-      ],
-    );;
+      actions: actions,
+    );
   }
 }

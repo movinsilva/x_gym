@@ -1,11 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_gym/styles/Pallete.dart';
 import 'package:x_gym/widgets/global/pill.dart';
 import 'package:x_gym/widgets/widgets_library.dart';
 
-class DietPage extends StatelessWidget {
+class DietPage extends StatefulWidget {
+  @override
+  _DietPageState createState() => _DietPageState();
+}
+
+class _DietPageState extends State<DietPage> {
   @override
   Widget build(BuildContext context) {
     return DefaultScaffold(
@@ -42,7 +48,7 @@ class DietPage extends StatelessWidget {
                       showCupertinoDialog(
                         context: context,
                         builder: (BuildContext context) => SelectDietAlertDialog(
-                          title: "Diet list",
+                          title: Text("Diet list"),
                           content: Column(
                             children: [
                               SizedBox(
@@ -68,31 +74,111 @@ class DietPage extends StatelessWidget {
                               ),
                             ],
                           ),
+                          actions: [
+                            new FlatButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              textColor: Theme.of(context).primaryColor,
+                              child: const Text("Okay, got it!"),
+                            ),
+                          ],
                         ),
                       );
                     }),
-                Pill(title: "+ Diet", onPressed: () {
-                  showCupertinoDialog(
-                    context: context,
-                    builder: (BuildContext context) => SelectDietAlertDialog(
-                      title: "Add a new diet",
-                      content: Column(
-                        children: [
-                          SizedBox(
-                            height: 10,
+                Pill(
+                    title: "Edit diet",
+                    onPressed: () {
+                      showCupertinoDialog(
+                        context: context,
+                        builder: (BuildContext context) => SelectDietAlertDialog(
+                          title: CupertinoTextField(),
+                          content: SingleChildScrollView(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Text(
+                                  "Breakfast",
+                                  style: GoogleFonts.poppins(color: Colors.grey, fontSize: 20),
+                                ),
+                                CupertinoTextField(
+                                  keyboardType: TextInputType.multiline,
+                                  minLines: 5,
+                                  maxLines: 10,
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Text(
+                                  "Lunch",
+                                  style: GoogleFonts.poppins(color: Colors.grey, fontSize: 20),
+                                ),
+                                CupertinoTextField(
+                                  keyboardType: TextInputType.multiline,
+                                  minLines: 5,
+                                  maxLines: 10,
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Text(
+                                  "Dinner",
+                                  style: GoogleFonts.poppins(color: Colors.grey, fontSize: 20),
+                                ),
+                                CupertinoTextField(
+                                  keyboardType: TextInputType.multiline,
+                                  minLines: 5,
+                                  maxLines: 10,
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Text(
+                                  "Post workout",
+                                  style: GoogleFonts.poppins(color: Colors.grey, fontSize: 20),
+                                ),
+                                CupertinoTextField(
+                                  keyboardType: TextInputType.multiline,
+                                  minLines: 5,
+                                  maxLines: 10,
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Text(
+                                  "Pre workout",
+                                  style: GoogleFonts.poppins(color: Colors.grey, fontSize: 20),
+                                ),
+                                CupertinoTextField(
+                                  keyboardType: TextInputType.multiline,
+                                  minLines: 5,
+                                  maxLines: 10,
+                                ),
+                              ],
+                            ),
                           ),
-                          Text(
-                            "Not found",
-                            style: GoogleFonts.poppins(fontSize: 20),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                }),
+                          actions: <Widget>[
+                            new FlatButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              textColor: Theme.of(context).primaryColor,
+                              child: const Text('Cancel'),
+                            ),
+                            new FlatButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              textColor: Theme.of(context).primaryColor,
+                              child: const Text('Save'),
+                            ),
+                          ],
+                        ),
+                      );
+                    }),
               ],
             ),
             SizedBox(

@@ -3,6 +3,7 @@ import 'package:x_gym/screens/dashboard.dart';
 import 'package:x_gym/screens/diet.dart';
 import 'package:x_gym/screens/login_screen.dart';
 import 'package:x_gym/screens/notices.dart';
+import 'package:x_gym/screens/promotion.dart';
 import 'package:x_gym/screens/register_screen.dart';
 import 'package:x_gym/widgets/widgets_library.dart';
 
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         "/dashboard" : (context) => Dashboard(),
         "/diet" : (context) => DietPage(),
         "/notices" : (context) => NoticesPage(),
+        "/promotions" : (context) => PromotionPage(),
       },
       home: LoginScreen(),
     );

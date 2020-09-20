@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:x_gym/widgets/global/default_background.dart';
-import 'package:x_gym/widgets/screens/notice_list_tile.dart';
+import 'file:///C:/Users/Sandev/Desktop/x_gym/lib/widgets/screens/notice/notice_list_tile.dart';
 
 class NoticesPage extends StatelessWidget {
   @override
@@ -23,12 +23,7 @@ class NoticesPage extends StatelessWidget {
 
     return DefaultScaffold(
       title: "Notices",
-      interior: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-            color: Colors.grey[200],
-            borderRadius: BorderRadius.only(topLeft: Radius.circular(50), topRight: Radius.circular(50))),
-        child: ClipRRect(
+      interior: ClipRRect(
           borderRadius: BorderRadius.only(topLeft: Radius.circular(50), topRight: Radius.circular(50)),
           child: Expanded(
             child: ListView.builder(
@@ -41,7 +36,6 @@ class NoticesPage extends StatelessWidget {
             ),
           ),
         ),
-      ),
     );
   }
 }
