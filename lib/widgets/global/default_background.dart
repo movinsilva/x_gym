@@ -8,11 +8,12 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:x_gym/constants/runtime_constants.dart';
 import 'package:x_gym/widgets/widgets_library.dart';
 import '../../styles/Pallete.dart';
 import 'drawer_tile.dart';
 
-class DefaultScaffold extends StatelessWidget {
+class DefaultScaffold extends StatefulWidget {
   // This will hold all the interior widgets
   // passed in to the constructor
   //
@@ -26,6 +27,11 @@ class DefaultScaffold extends StatelessWidget {
   const DefaultScaffold({Key key, @required this.interior, @required this.title}) : super(key: key);
 
   @override
+  _DefaultScaffoldState createState() => _DefaultScaffoldState();
+}
+
+class _DefaultScaffoldState extends State<DefaultScaffold> {
+  @override
   Widget build(BuildContext context) {
     // Get the size of the current screen
     final size = MediaQuery.of(context).size;
@@ -33,6 +39,55 @@ class DefaultScaffold extends StatelessWidget {
     // Get the instance for the
     // global key in the scaffold
     var scaffoldKey = GlobalKey<ScaffoldState>();
+
+    // arrays for the drawer and the image data for the
+    // icons
+    var drawer_titles = [
+      "Dashboard",
+      "Virtual Card",
+      "My Schedule",
+      "Diet Schedule",
+      "Body Chart",
+      "My History",
+      "All Schedules",
+      "Trainers",
+      "Promotions",
+      "Notices",
+      "About Us",
+      "Settings",
+      "Help"
+    ];
+    var drawer_icons = [
+      Icons.pie_chart,
+      Icons.credit_card,
+      Icons.calendar_today,
+      Icons.fastfood,
+      Icons.show_chart,
+      Icons.calendar_today,
+      Icons.calendar_today,
+      Icons.people,
+      Icons.notifications,
+      Icons.notifications_active,
+      Icons.screen_share,
+      Icons.settings,
+      Icons.help
+    ];
+
+    var drawer_routes = [
+      "/dashboard",
+      "/dashboard",
+      "/dashboard",
+      "/dashboard",
+      "/dashboard",
+      "/dashboard",
+      "/dashboard",
+      "/dashboard",
+      "/dashboard",
+      "/dashboard",
+      "/dashboard",
+      "/dashboard",
+      "/dashboard",
+    ];
 
     return Scaffold(
       key: scaffoldKey,
@@ -99,7 +154,7 @@ class DefaultScaffold extends StatelessWidget {
                     Expanded(flex: 3, child: Image.asset("assets/black_logo.png"))
                   ],
                 ),
-                interior, // Expanded(child: interior)
+                widget.interior, // Expanded(child: interior)
               ],
             )),
       ),
@@ -111,50 +166,54 @@ class DefaultScaffold extends StatelessWidget {
               height: 30,
             ),
             Container(
-              width: double.infinity,
-              height: size.height * 0.2,
-              decoration: BoxDecoration(
+                width: double.infinity,
+                height: size.height * 0.2,
+                decoration: BoxDecoration(
                   color: Pallete.DefaultThemeColour,
                   borderRadius: BorderRadius.only(bottomRight: Radius.circular(30)),
-                  ),
-              child: Center(
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: 10,
-                    ),
-                    ClipOval(
-                      child: CachedNetworkImage(
-                        width: size.height * 0.1,
-                        height: size.height * 0.1,
-                        imageUrl: "http://35.247.188.34/client1.png",
-                        placeholder: (context, url) => CircularProgressIndicator(),
-                        errorWidget: (context, url, error) => Icon(Icons.error),
+                ),
+                child: Center(
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 10,
                       ),
-                    ),
-                    Expanded(
-                      child: Center(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            AutoSizeText("Sandev Kuruppu", style: GoogleFonts.poppins(fontSize: 25, fontWeight:
-                            FontWeight.w700),
-                              maxLines: 2,
-                              textAlign: TextAlign.center,),
-                            AutoSizeText("235698", style: GoogleFonts.poppins(fontSize: 30, color: Colors.white), maxLines:
-                            1,)
-                          ],
+                      ClipOval(
+                        child: CachedNetworkImage(
+                          width: size.height * 0.1,
+                          height: size.height * 0.1,
+                          imageUrl: "http://35.247.188.34/client1.png",
+                          placeholder: (context, url) => CircularProgressIndicator(),
+                          errorWidget: (context, url, error) => Icon(Icons.error),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 8,
-                    )
-                  ],
-                ),
-              )
-            ),
+                      Expanded(
+                        child: Center(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              AutoSizeText(
+                                "Sandev Kuruppu",
+                                style: GoogleFonts.poppins(fontSize: 25, fontWeight: FontWeight.w700),
+                                maxLines: 2,
+                                textAlign: TextAlign.center,
+                              ),
+                              AutoSizeText(
+                                "235698",
+                                style: GoogleFonts.poppins(fontSize: 30, color: Colors.white),
+                                maxLines: 1,
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 8,
+                      )
+                    ],
+                  ),
+                )),
             Expanded(
               child: Stack(
                 children: [
@@ -170,89 +229,24 @@ class DefaultScaffold extends StatelessWidget {
                         color: Colors.white,
                         borderRadius: BorderRadius.only(topRight: Radius.circular(30), topLeft: Radius.circular(30)),
                         boxShadow: [
-                          BoxShadow(
-                            color: Colors.black,
-                            blurRadius: 15,
-                            offset: Offset(10, 10),
-                            spreadRadius: -10
-                          )
+                          BoxShadow(color: Colors.black, blurRadius: 15, offset: Offset(10, 10), spreadRadius: -10)
                         ]),
                   ),
                   Container(
                     width: double.infinity,
                     height: double.infinity,
-                    child: ListView(
-                              children: [
-                                DrawerTile(
-                                  title: "Dashboard",
-                                  iconData: Icons.pie_chart,
-                                  onTap: () {},
-                                ),
-                                DrawerTile(
-                                  title: "Virtual card",
-                                  onTap: () {},
-                                  iconData: Icons.credit_card,
-                                ),
-                                LineBreaker(),
-                                DrawerTile(
-                                  title: "My schedule",
-                                  onTap: () {},
-                                  iconData: Icons.calendar_today,
-                                ),
-                                DrawerTile(
-                                  title: "Diet schedules",
-                                  onTap: () {},
-                                  iconData: Icons.fastfood,
-                                ),
-                                DrawerTile(
-                                  title: "Body chart",
-                                  onTap: () {},
-                                  iconData: Icons.show_chart,
-                                ),
-                                DrawerTile(
-                                  title: "My history",
-                                  onTap: () {},
-                                  iconData: Icons.calendar_today,
-                                ),
-                                LineBreaker(),
-                                DrawerTile(
-                                  title: "All schedules",
-                                  onTap: () {},
-                                  iconData: Icons.calendar_today,
-                                ),
-                                DrawerTile(
-                                  title: "Trainers",
-                                  onTap: () {},
-                                  iconData: Icons.people,
-                                ),
-                                DrawerTile(
-                                  title: "Promotions",
-                                  onTap: () {},
-                                  iconData: Icons.notifications,
-                                ),
-                                DrawerTile(
-                                  title: "Notices",
-                                  onTap: () {},
-                                  iconData: Icons.notifications_active,
-                                ),
-                                DrawerTile(
-                                  title: "About us",
-                                  onTap: () {},
-                                  iconData: Icons.screen_share,
-                                ),
-                                LineBreaker(),
-                                DrawerTile(
-                                  title: "Settings",
-                                  onTap: () {},
-                                  iconData: Icons.settings,
-                                ),
-                                DrawerTile(
-                                  title: "Help",
-                                  onTap: () {},
-                                  iconData: Icons.help,
-                                )
-                              ],
-                            ),
+                    child: ListView.builder(
+                      itemBuilder: (context, index) => DrawerTile(
+                        isSelected: index == RuntimeConstants.selectIndex,
+                        title: drawer_titles[index],
+                        iconData: drawer_icons[index],
+                        onTap: () {
+                            RuntimeConstants.selectIndex = index;
+                            Navigator.of(context).pushReplacementNamed(drawer_routes[index]);
+                        },
+                      ),
+                      itemCount: drawer_titles.length,
+                    ),
                   )
                 ],
               ),

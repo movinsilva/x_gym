@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:x_gym/constants/runtime_constants.dart';
+import 'package:x_gym/database_helper/database_helper.dart';
 import 'package:x_gym/styles/Pallete.dart';
 import 'package:x_gym/widgets/widgets_library.dart';
 
@@ -50,7 +51,6 @@ class LoginPageView extends StatelessWidget {
         ),
         InkWell(
           onTap: (){
-
             Navigator.of(context).pushNamed("/dashboard");
             RuntimeConstants.currentPageName = "Dashboard" ;
 

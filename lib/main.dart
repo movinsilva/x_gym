@@ -15,6 +15,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.orange,
+      ),
       routes: {
         "/register" : (context) => RegisterScreen(),
         "/dashboard" : (context) => Dashboard(),
