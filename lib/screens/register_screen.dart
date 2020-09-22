@@ -13,9 +13,7 @@ class RegisterScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.transparent,
-      body: FittedBox(
-        fit: BoxFit.contain,
-        child: Container(
+      body:  Container(
           width: size.width,
           height: size.height,
           decoration: BoxDecoration(
@@ -28,7 +26,6 @@ class RegisterScreen extends StatelessWidget {
           ),
           child: RegisterPageView(),
         ),
-      ),
     );
   }
 }

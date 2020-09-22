@@ -14,35 +14,37 @@ class RegisterPageView extends StatelessWidget {
 
     final size = MediaQuery.of(context).size;
 
-    return Column(
-      children: <Widget>[
-        SizedBox(
-          height: 45,
-        ),
-        Container(
-          height: 50,
-          width: size.width*0.6,
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Pallete.DefaultThemeColour,
-              width: 3
-            ),
-            color: Colors.transparent,
-            borderRadius: BorderRadius.all(Radius.circular(15)),
+    return SingleChildScrollView(
+      child: Column(
+        children: <Widget>[
+          SizedBox(
+            height: 45,
           ),
-          child: Center(
-            child: AutoSizeText(
-              "Registration Form",
-              style: GoogleFonts.poppins(
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
+          Container(
+            height: 50,
+            width: size.width*0.6,
+            decoration: BoxDecoration(
+              border: Border.all(
                 color: Pallete.DefaultThemeColour,
+                width: 3
+              ),
+              color: Colors.transparent,
+              borderRadius: BorderRadius.all(Radius.circular(15)),
+            ),
+            child: Center(
+              child: AutoSizeText(
+                "Registration Form",
+                style: GoogleFonts.poppins(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  color: Pallete.DefaultThemeColour,
+                ),
               ),
             ),
           ),
-        ),
-        RegisterPageScrollablePart(),
-      ],
+          RegisterPageScrollablePart(),
+        ],
+      ),
     );
   }
 }

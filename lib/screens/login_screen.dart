@@ -14,11 +14,8 @@ class LoginScreen extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.transparent,
-      body: FittedBox(
-        fit: BoxFit.contain,
-        child: Container(
+        body: Container(
           width: size.width,
           height: size.height,
           decoration: BoxDecoration(
@@ -28,7 +25,6 @@ class LoginScreen extends StatelessWidget {
           )),
           child: LoginPageView(),
         ),
-      ),
     );
   }
 }

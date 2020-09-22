@@ -13,7 +13,7 @@ import 'package:x_gym/widgets/widgets_library.dart';
 import '../../styles/Pallete.dart';
 import 'drawer_tile.dart';
 
-class DefaultScaffold extends StatefulWidget {
+class DefaultScaffold extends StatelessWidget {
   // This will hold all the interior widgets
   // passed in to the constructor
   //
@@ -27,14 +27,11 @@ class DefaultScaffold extends StatefulWidget {
   const DefaultScaffold({Key key, @required this.interior, @required this.title}) : super(key: key);
 
   @override
-  _DefaultScaffoldState createState() => _DefaultScaffoldState();
-}
-
-class _DefaultScaffoldState extends State<DefaultScaffold> {
-  @override
   Widget build(BuildContext context) {
     // Get the size of the current screen
-    final size = MediaQuery.of(context).size;
+    final size = MediaQuery
+        .of(context)
+        .size;
 
     // Get the instance for the
     // global key in the scaffold
@@ -135,11 +132,13 @@ class _DefaultScaffoldState extends State<DefaultScaffold> {
                             decoration: BoxDecoration(
                                 color: Pallete.DefaultThemeColour,
                                 borderRadius:
-                                    BorderRadius.only(topRight: Radius.circular(25), bottomRight: Radius.circular(25))),
+                                BorderRadius.only(topRight: Radius.circular(25),
+                                    bottomRight: Radius.circular(25))),
                             child: Padding(
-                              padding: const EdgeInsets.only(left: 16, right: 25, top: 3, bottom: 3),
+                              padding: const EdgeInsets.only(
+                                  left: 16, right: 25, top: 3, bottom: 3),
                               child: Text(
-                                widget.title,
+                                title,
                                 maxLines: 1,
                                 style: GoogleFonts.poppins(
                                   color: Colors.white,
@@ -152,14 +151,15 @@ class _DefaultScaffoldState extends State<DefaultScaffold> {
                         ],
                       ),
                     ),
-                    Expanded(flex: 3, child: Image.asset("assets/black_logo.png"))
+                    Expanded(
+                        flex: 3, child: Image.asset("assets/black_logo.png"))
                   ],
                 ),
                 SizedBox(
                   height: 15,
                 ),
                 Expanded(
-                  child: widget.interior,
+                  child: interior,
                 ), // Expanded(child: interior)
               ],
             )),
@@ -176,7 +176,8 @@ class _DefaultScaffoldState extends State<DefaultScaffold> {
                 height: size.height * 0.2,
                 decoration: BoxDecoration(
                   color: Pallete.DefaultThemeColour,
-                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(30)),
+                  borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(30)),
                 ),
                 child: Center(
                   child: Row(
@@ -189,8 +190,10 @@ class _DefaultScaffoldState extends State<DefaultScaffold> {
                           width: size.height * 0.1,
                           height: size.height * 0.1,
                           imageUrl: "http://35.247.188.34/client1.png",
-                          placeholder: (context, url) => CircularProgressIndicator(),
-                          errorWidget: (context, url, error) => Icon(Icons.error),
+                          placeholder: (context, url) =>
+                              CircularProgressIndicator(),
+                          errorWidget: (context, url, error) =>
+                              Icon(Icons.error),
                         ),
                       ),
                       Expanded(
@@ -201,13 +204,15 @@ class _DefaultScaffoldState extends State<DefaultScaffold> {
                             children: [
                               AutoSizeText(
                                 "Sandev Kuruppu",
-                                style: GoogleFonts.poppins(fontSize: 25, fontWeight: FontWeight.w700),
+                                style: GoogleFonts.poppins(
+                                    fontSize: 25, fontWeight: FontWeight.w700),
                                 maxLines: 2,
                                 textAlign: TextAlign.center,
                               ),
                               AutoSizeText(
                                 "235698",
-                                style: GoogleFonts.poppins(fontSize: 30, color: Colors.white),
+                                style: GoogleFonts.poppins(
+                                    fontSize: 30, color: Colors.white),
                                 maxLines: 1,
                               )
                             ],
@@ -233,25 +238,33 @@ class _DefaultScaffoldState extends State<DefaultScaffold> {
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.only(topRight: Radius.circular(30), topLeft: Radius.circular(30)),
+                        borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(30),
+                            topLeft: Radius.circular(30)),
                         boxShadow: [
-                          BoxShadow(color: Colors.black, blurRadius: 15, offset: Offset(10, 10), spreadRadius: -10)
+                          BoxShadow(color: Colors.black,
+                              blurRadius: 15,
+                              offset: Offset(10, 10),
+                              spreadRadius: -10)
                         ]),
                   ),
                   Container(
                     width: double.infinity,
                     height: double.infinity,
                     child: ListView.builder(
-                      itemBuilder: (context, index) => DrawerTile(
-                        isSelected: index == RuntimeConstants.selectIndex,
-                        title: drawer_titles[index],
-                        iconData: drawer_icons[index],
-                        onTap: () {
-                          RuntimeConstants.currentPageName = drawer_titles[index];
-                            RuntimeConstants.selectIndex = index;
-                            Navigator.of(context).pushReplacementNamed(drawer_routes[index]);
-                        },
-                      ),
+                      itemBuilder: (context, index) =>
+                          DrawerTile(
+                            isSelected: index == RuntimeConstants.selectIndex,
+                            title: drawer_titles[index],
+                            iconData: drawer_icons[index],
+                            onTap: () {
+                              RuntimeConstants.currentPageName =
+                              drawer_titles[index];
+                              RuntimeConstants.selectIndex = index;
+                              Navigator.of(context).pushReplacementNamed(
+                                  drawer_routes[index]);
+                            },
+                          ),
                       itemCount: drawer_titles.length,
                     ),
                   )
