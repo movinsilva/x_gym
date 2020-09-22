@@ -9,6 +9,7 @@ import 'package:x_gym/screens/login_screen.dart';
 import 'package:x_gym/screens/notices.dart';
 import 'package:x_gym/screens/promotion.dart';
 import 'package:x_gym/screens/register_screen.dart';
+import 'package:x_gym/screens/virtual_card.dart';
 
 import 'screens/login_screen.dart';
 
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
         "/diet": (context) => DietPage(),
         "/notices": (context) => NoticesPage(),
         "/promotions": (context) => PromotionPage(),
+        "/virtualCard" : (context) => VirtualCard(),
       },
       home: LoginScreen(),
     );

@@ -72,7 +72,7 @@ class DefaultScaffold extends StatelessWidget {
 
     var drawer_routes = [
       "/dashboard",
-      "/dashboard",
+      "/virtualCard",
       "/dashboard",
       "/diet",
       "/dashboard",
