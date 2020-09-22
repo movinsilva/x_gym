@@ -73,7 +73,7 @@ class DefaultScaffold extends StatelessWidget {
     var drawer_routes = [
       "/dashboard",
       "/virtualCard",
-      "/dashboard",
+      "/mySchedule",
       "/diet",
       "/dashboard",
       "/dashboard",
@@ -137,7 +137,7 @@ class DefaultScaffold extends StatelessWidget {
                             child: Padding(
                               padding: const EdgeInsets.only(
                                   left: 16, right: 25, top: 3, bottom: 3),
-                              child: Text(
+                              child: AutoSizeText(
                                 title,
                                 maxLines: 1,
                                 style: GoogleFonts.poppins(

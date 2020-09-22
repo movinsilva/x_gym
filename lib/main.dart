@@ -3,9 +3,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:x_gym/provider_models/dashboard_viewmodel.dart';
+import 'package:x_gym/provider_models/my_schedule_viewmodel.dart';
 import 'package:x_gym/screens/dashboard.dart';
 import 'package:x_gym/screens/diet.dart';
 import 'package:x_gym/screens/login_screen.dart';
+import 'package:x_gym/screens/my_schedule.dart';
 import 'package:x_gym/screens/notices.dart';
 import 'package:x_gym/screens/promotion.dart';
 import 'package:x_gym/screens/register_screen.dart';
@@ -20,6 +22,7 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => DashboardViewModel()),
+        ChangeNotifierProvider(create: (_) => MyScheduleViewModel(),)
       ],
       child: MyApp(),
     ),
@@ -49,6 +52,7 @@ class MyApp extends StatelessWidget {
         "/notices": (context) => NoticesPage(),
         "/promotions": (context) => PromotionPage(),
         "/virtualCard" : (context) => VirtualCard(),
+        "/mySchedule" : (context) => MySchedule(),
       },
       home: LoginScreen(),
     );
