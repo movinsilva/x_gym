@@ -12,6 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
   auto_size_text: ^2.1.0
+  # for the preview of the app
+  device_preview: ^0.4.7
   # for the custom fonts use in the app
   google_fonts: ^1.1.0
 

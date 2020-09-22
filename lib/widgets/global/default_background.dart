@@ -93,7 +93,7 @@ class _DefaultScaffoldState extends State<DefaultScaffold> {
       resizeToAvoidBottomInset: false,
       key: scaffoldKey,
       body: FittedBox(
-        fit: BoxFit.contain,
+        fit: BoxFit.scaleDown,
         child: Container(
             width: size.width,
             height: size.height,

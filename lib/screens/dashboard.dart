@@ -28,28 +28,31 @@ class Dashboard extends StatelessWidget {
               color: Colors.black54,
             ),
           ),
-          SingleChildScrollView(
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+          Expanded(
+            child: SingleChildScrollView(
+              child: Expanded(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      width: size.width*0.5,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Container(
                             height: size.height * 0.32,
                             width: size.width * 0.43,
-                            margin: const EdgeInsets.only(left: 15),
+                            margin: const EdgeInsets.only(left: 15, top: 15),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               boxShadow: [
                                 BoxShadow(
                                   color: Pallete.DefaultThemeColour,
-                                  blurRadius: 0,
-                                )
+                                  blurRadius: 7,
+                                ),
                               ],
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(12)),
+                              borderRadius: BorderRadius.all(Radius.circular(12)),
                             ),
                             child: Column(
                               children: <Widget>[
@@ -67,11 +70,16 @@ class Dashboard extends StatelessWidget {
                           Container(
                             margin: const EdgeInsets.only(top: 15, left: 15),
                             decoration: BoxDecoration(
+                              color: Colors.white,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(15)),
-                                border: Border.all(
-                                    width: 3,
-                                    color: Pallete.DefaultThemeColour)),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Pallete.DefaultThemeColour,
+                                  blurRadius: 7,
+                                )
+                              ],
+                               ),
                             height: size.height * 0.17,
                             width: size.width * 0.44,
                             child: Column(
@@ -103,13 +111,17 @@ class Dashboard extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            margin: const EdgeInsets.only(top: 15, left: 15),
+                            margin: const EdgeInsets.only(top: 15, left: 15,bottom: 15),
                             decoration: BoxDecoration(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(15)),
-                                border: Border.all(
-                                    width: 3,
-                                    color: Pallete.DefaultThemeColour)),
+                                color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Pallete.DefaultThemeColour,
+                                  blurRadius: 7,
+                                )
+                              ],),
                             height: size.height * 0.17,
                             width: size.width * 0.44,
                             child: Column(
@@ -142,8 +154,12 @@ class Dashboard extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                    ),
+                    Container(
+                      width: size.width*0.5,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Container(
                             margin: const EdgeInsets.only(
@@ -151,9 +167,13 @@ class Dashboard extends StatelessWidget {
                             decoration: BoxDecoration(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(15)),
-                                border: Border.all(
-                                    width: 3,
-                                    color: Pallete.DefaultThemeColour)),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Pallete.DefaultThemeColour,
+                                  blurRadius: 7,
+                                )
+                              ],),
                             height: size.height * 0.2,
                             width: size.width * 0.44,
                             child: Column(
@@ -190,9 +210,13 @@ class Dashboard extends StatelessWidget {
                             decoration: BoxDecoration(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(15)),
-                                border: Border.all(
-                                    width: 3,
-                                    color: Pallete.DefaultThemeColour)),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Pallete.DefaultThemeColour,
+                                  blurRadius: 7,
+                                )
+                              ],),
                             height: size.height * 0.2,
                             width: size.width * 0.44,
                             child: Column(
@@ -229,10 +253,14 @@ class Dashboard extends StatelessWidget {
                             decoration: BoxDecoration(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(15)),
-                                border: Border.all(
-                                    width: 3,
-                                    color: Pallete.DefaultThemeColour)),
-                            height: size.height * 0.2,
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Pallete.DefaultThemeColour,
+                                  blurRadius: 7,
+                                )
+                              ],),
+                            height: size.height * 0.12,
                             width: size.width * 0.44,
                             child: Column(
                               children: <Widget>[
@@ -264,14 +292,18 @@ class Dashboard extends StatelessWidget {
                           ),
                           Container(
                             margin: const EdgeInsets.only(
-                                top: 15, left: 15, right: 15),
+                                top: 15, left: 15, right: 15,bottom: 15),
                             decoration: BoxDecoration(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(15)),
-                                border: Border.all(
-                                    width: 3,
-                                    color: Pallete.DefaultThemeColour)),
-                            height: size.height * 0.2,
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Pallete.DefaultThemeColour,
+                                  blurRadius: 7,
+                                )
+                              ],),
+                            height: size.height * 0.12,
                             width: size.width * 0.44,
                             child: Column(
                               children: <Widget>[
@@ -303,8 +335,11 @@ class Dashboard extends StatelessWidget {
                           ),
                         ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
         ],
       ),

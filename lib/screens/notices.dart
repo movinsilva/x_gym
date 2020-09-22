@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:x_gym/widgets/global/default_background.dart';
-import 'file:///C:/Users/Sandev/Desktop/x_gym/lib/widgets/screens/notice/notice_list_tile.dart';
+import 'file:///C:/Users/Movin Silva/Desktop/Apps/x_gym/lib/widgets/screens/notice/notice_list_tile.dart';
 
 class NoticesPage extends StatelessWidget {
   @override
