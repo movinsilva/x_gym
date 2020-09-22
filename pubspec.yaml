@@ -22,10 +22,13 @@ dependencies:
   material_design_icons_flutter: 4.0.5345
   # for online cache image
   cached_network_image: ^2.2.0+1
-  # for database and file management
+  # for database management
   sqflite:
+  # for the file management
   path:
   path_provider:
+  # for the state management
+  provider: ^4.3.2+2
 
 dev_dependencies:
   flutter_test:
