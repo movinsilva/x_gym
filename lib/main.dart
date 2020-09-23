@@ -7,6 +7,7 @@ import 'package:x_gym/provider_models/my_schedule_viewmodel.dart';
 import 'package:x_gym/screens/dashboard.dart';
 import 'package:x_gym/screens/diet.dart';
 import 'package:x_gym/screens/login_screen.dart';
+import 'package:x_gym/screens/my_history.dart';
 import 'package:x_gym/screens/my_schedule.dart';
 import 'package:x_gym/screens/notices.dart';
 import 'package:x_gym/screens/promotion.dart';
@@ -53,6 +54,7 @@ class MyApp extends StatelessWidget {
         "/promotions": (context) => PromotionPage(),
         "/virtualCard" : (context) => VirtualCard(),
         "/mySchedule" : (context) => MySchedule(),
+        "/myHistory" : (context) => MyHistory(),
       },
       home: LoginScreen(),
     );

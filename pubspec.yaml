@@ -14,6 +14,10 @@ dependencies:
   auto_size_text: ^2.1.0
   # for the preview of the app
   device_preview: ^0.4.7
+  # for the qr code generation
+  qr_flutter: ^3.2.0
+  #calendar view
+  table_calendar: ^2.2.3
   # for the custom fonts use in the app
   google_fonts: ^1.1.0
 
