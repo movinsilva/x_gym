@@ -69,7 +69,6 @@ class _CalendarState extends State<Calendar> with TickerProviderStateMixin {
               ),
             );
           }
-
           if (holidays.isNotEmpty) {
             children.add(
               Positioned(
@@ -99,15 +98,15 @@ class _CalendarState extends State<Calendar> with TickerProviderStateMixin {
       ),
       width: 16.0,
       height: 16.0,
-      child: Center(
-        child: Text(
-          '${events.length}',
-          style: TextStyle().copyWith(
-            color: Colors.white,
-            fontSize: 12.0,
-          ),
-        ),
-      ),
+      // child: Center(
+      //   child: Text(
+      //     '${events.length}',
+      //     style: TextStyle().copyWith(
+      //       color: Colors.white,
+      //       fontSize: 12.0,
+      //     ),
+      //   ),
+      // ),
     );
   }
 

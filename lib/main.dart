@@ -12,6 +12,7 @@ import 'package:x_gym/screens/my_schedule.dart';
 import 'package:x_gym/screens/notices.dart';
 import 'package:x_gym/screens/promotion.dart';
 import 'package:x_gym/screens/register_screen.dart';
+import 'package:x_gym/screens/trainers.dart';
 import 'package:x_gym/screens/virtual_card.dart';
 
 import 'screens/login_screen.dart';
@@ -55,6 +56,7 @@ class MyApp extends StatelessWidget {
         "/virtualCard" : (context) => VirtualCard(),
         "/mySchedule" : (context) => MySchedule(),
         "/myHistory" : (context) => MyHistory(),
+        "/trainers" : (context) => Trainers(),
       },
       home: LoginScreen(),
     );
