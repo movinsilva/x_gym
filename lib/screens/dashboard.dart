@@ -48,6 +48,10 @@ class Dashboard extends StatelessWidget {
                               margin: const EdgeInsets.only(left: 15, top: 15),
                               decoration: BoxDecoration(
                                 color: Colors.white,
+                                image: DecorationImage(
+                                  fit: BoxFit.contain,
+                                  image: AssetImage("assets/body.png")
+                                ),
                                 boxShadow: [
                                   BoxShadow(
                                     color: Pallete.DefaultThemeColour,
@@ -74,6 +78,9 @@ class Dashboard extends StatelessWidget {
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.all(Radius.circular(15)),
+                                image: DecorationImage(
+                                  image: AssetImage("assets/legs.png")
+                                ),
                                 boxShadow: [
                                   BoxShadow(
                                     color: Pallete.DefaultThemeColour,
@@ -115,6 +122,9 @@ class Dashboard extends StatelessWidget {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.all(Radius.circular(15)),
                                 color: Colors.white,
+                                image: DecorationImage(
+                                  image: AssetImage("assets/arms.png")
+                                ),
                                 boxShadow: [
                                   BoxShadow(
                                     color: Pallete.DefaultThemeColour,
@@ -165,6 +175,9 @@ class Dashboard extends StatelessWidget {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.all(Radius.circular(15)),
                                 color: Colors.white,
+                                image: DecorationImage(
+                                  image: AssetImage("assets/shoulders.png")
+                                ),
                                 boxShadow: [
                                   BoxShadow(
                                     color: Pallete.DefaultThemeColour,
@@ -206,6 +219,9 @@ class Dashboard extends StatelessWidget {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.all(Radius.circular(15)),
                                 color: Colors.white,
+                                image: DecorationImage(
+                                  image: AssetImage("assets/abs.png")
+                                ),
                                 boxShadow: [
                                   BoxShadow(
                                     color: Pallete.DefaultThemeColour,
