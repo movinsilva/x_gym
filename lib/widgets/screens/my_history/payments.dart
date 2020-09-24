@@ -110,11 +110,12 @@ class Payments extends StatelessWidget {
                       ),
                     ),
                     AutoSizeText(
-                      "Rs. 10 500",
+                      String.,
                       style: GoogleFonts.poppins(
                           fontSize: 17,
                           fontWeight: FontWeight.w700
                       ),
+
                     ),
                   ],
                 ),

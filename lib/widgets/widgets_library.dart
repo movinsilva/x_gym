@@ -22,3 +22,6 @@ export 'package:x_gym/widgets/screens/diet/alert_dialog.dart';
 export 'package:x_gym/widgets/screens/my_history/calendar.dart';
 export 'package:x_gym/widgets/screens/my_history/attendance.dart';
 export 'package:x_gym/widgets/screens/my_history/payments.dart';
+export 'package:x_gym/widgets/screens/my_history/measurements.dart';
+export 'package:x_gym/widgets/screens/my_history/measurementsGraph.dart';
+

@@ -19,6 +19,8 @@ class MyHistory extends StatelessWidget {
                 switch (model.index) {
                   case 0:
                     return Attendance();
+                  case 1:
+                    return Measurements();
                   case 3:
                     return Payments();
                   default:
