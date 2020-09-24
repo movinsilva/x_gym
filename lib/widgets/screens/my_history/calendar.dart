@@ -60,23 +60,12 @@ class _CalendarState extends State<Calendar> with TickerProviderStateMixin {
         markersBuilder: (context, date, events, holidays) {
           final children = <Widget>[];
           if (events.isNotEmpty) {
-            children.add(
-              Positioned(
-                bottom: 3,
-                height: 50,
-                width: 50,
-                child: _buildEventsMarker(date, events),
-              ),
+            children.add(Center(child: _buildEventsMarker(date, events)),
             );
           }
           if (holidays.isNotEmpty) {
             children.add(
-              Positioned(
-                bottom: 3,
-                height: 50,
-                width: 50,
-                child: _buildHolidaysMarker(),
-              ),
+                Center(child: _buildHolidaysMarker()),
             );
           }
           return children;
@@ -96,8 +85,8 @@ class _CalendarState extends State<Calendar> with TickerProviderStateMixin {
         //     ? Colors.brown[500]
         //     : _calendarController.isToday(date) ? Colors.brown[300] : Colors.blue[400],
       ),
-      width: 16.0,
-      height: 16.0,
+      width: 42.0,
+      height: 42.0,
       // child: Center(
       //   child: Text(
       //     '${events.length}',

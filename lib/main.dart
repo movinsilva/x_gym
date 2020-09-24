@@ -1,9 +1,12 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:x_gym/provider_models/dashboard_viewmodel.dart';
+import 'package:x_gym/provider_models/my_history_viewmodel.dart';
 import 'package:x_gym/provider_models/my_schedule_viewmodel.dart';
+import 'package:x_gym/provider_models/tab_viewmodel.dart';
 import 'package:x_gym/screens/dashboard.dart';
 import 'package:x_gym/screens/diet.dart';
 import 'package:x_gym/screens/login_screen.dart';
@@ -24,7 +27,9 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => DashboardViewModel()),
-        ChangeNotifierProvider(create: (_) => MyScheduleViewModel(),)
+        ChangeNotifierProvider(create: (_) => MyHistoryViewModel(),),
+        ChangeNotifierProvider(create: (_) => MyScheduleViewModel(),),
+        ChangeNotifierProvider(create: (_) => TabViewModel(),)
       ],
       child: MyApp(),
     ),
@@ -43,6 +48,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    //Changed the colour of the status bar
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark
+    ));
+
     return MaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.orange,

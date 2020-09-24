@@ -70,9 +70,6 @@ class NavigationDrawer extends StatelessWidget {
       width: size.width * 0.72,
       child: Column(
         children: [
-          SizedBox(
-            height: 30,
-          ),
           Container(
               width: double.infinity,
               height: size.height * 0.2,

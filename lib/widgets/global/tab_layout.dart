@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:x_gym/provider_models/dashboard_viewmodel.dart';
+import 'package:x_gym/provider_models/tab_viewmodel.dart';
 import 'package:x_gym/styles/Pallete.dart';
 
 class TabLayout extends StatelessWidget {
@@ -11,7 +12,7 @@ class TabLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<DashboardViewModel>(
+    return Consumer<TabViewModel>(
       builder: (context, model, widget) => Container(
         height: 60,
         child: ListView.builder(
@@ -21,7 +22,7 @@ class TabLayout extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: InkWell(
               onTap: () {
-                  model.tab_index = index;
+                  model.index = index;
               },
               highlightColor: Colors.transparent,
               splashColor: Colors.transparent,
@@ -30,7 +31,7 @@ class TabLayout extends StatelessWidget {
                   Text(
                     list[index],
                     style: GoogleFonts.poppins(
-                      color: index == model.tab_index? Colors.black54 : Colors.black26,
+                      color: index == model.index? Colors.black54 : Colors.black26,
                       fontWeight: FontWeight.w500,
                       fontSize: 20,
                     ),
@@ -41,7 +42,7 @@ class TabLayout extends StatelessWidget {
                       height: 6,
                       width: 40,
                       decoration: BoxDecoration(
-                        color: index == model.tab_index ? Pallete.DefaultThemeColour: Colors.transparent,
+                        color: index == model.index ? Pallete.DefaultThemeColour: Colors.transparent,
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                       ),
                     ),

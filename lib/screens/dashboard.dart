@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:x_gym/provider_models/dashboard_viewmodel.dart';
+import 'package:x_gym/provider_models/tab_viewmodel.dart';
 import 'package:x_gym/styles/Pallete.dart';
 import 'package:x_gym/widgets/global/default_background.dart';
 import 'package:x_gym/widgets/widgets_library.dart';
@@ -19,7 +20,7 @@ class Dashboard extends StatelessWidget {
 
     return DefaultScaffold(
       title: "Dashboard",
-      interior: Consumer<DashboardViewModel>(
+      interior: Consumer<TabViewModel>(
         builder: (context, model, widget) => Column(
         children: <Widget>[
           TabLayout(["Day", "Week", "Month", "6 Month"]),
@@ -30,10 +31,11 @@ class Dashboard extends StatelessWidget {
               color: Colors.black54,
             ),
           ),
-          Expanded(
-            child: SingleChildScrollView(
-              child: Expanded(
-                child: Row(
+          Consumer<DashboardViewModel>(
+            builder: (context, model, widget) => Expanded(
+              child: SingleChildScrollView(
+                child: Expanded(
+                  child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       Container(
@@ -49,8 +51,8 @@ class Dashboard extends StatelessWidget {
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 image: DecorationImage(
-                                  fit: BoxFit.contain,
-                                  image: AssetImage("assets/body.png")
+                                    fit: BoxFit.contain,
+                                    image: AssetImage("assets/body.png")
                                 ),
                                 boxShadow: [
                                   BoxShadow(
@@ -79,7 +81,7 @@ class Dashboard extends StatelessWidget {
                                 color: Colors.white,
                                 borderRadius: BorderRadius.all(Radius.circular(15)),
                                 image: DecorationImage(
-                                  image: AssetImage("assets/legs.png")
+                                    image: AssetImage("assets/legs.png")
                                 ),
                                 boxShadow: [
                                   BoxShadow(
@@ -123,7 +125,7 @@ class Dashboard extends StatelessWidget {
                                 borderRadius: BorderRadius.all(Radius.circular(15)),
                                 color: Colors.white,
                                 image: DecorationImage(
-                                  image: AssetImage("assets/arms.png")
+                                    image: AssetImage("assets/arms.png")
                                 ),
                                 boxShadow: [
                                   BoxShadow(
@@ -176,7 +178,7 @@ class Dashboard extends StatelessWidget {
                                 borderRadius: BorderRadius.all(Radius.circular(15)),
                                 color: Colors.white,
                                 image: DecorationImage(
-                                  image: AssetImage("assets/shoulders.png")
+                                    image: AssetImage("assets/shoulders.png")
                                 ),
                                 boxShadow: [
                                   BoxShadow(
@@ -220,7 +222,7 @@ class Dashboard extends StatelessWidget {
                                 borderRadius: BorderRadius.all(Radius.circular(15)),
                                 color: Colors.white,
                                 image: DecorationImage(
-                                  image: AssetImage("assets/abs.png")
+                                    image: AssetImage("assets/abs.png")
                                 ),
                                 boxShadow: [
                                   BoxShadow(
@@ -348,6 +350,7 @@ class Dashboard extends StatelessWidget {
                 ),
               ),
             ),
+          ),
         ],
       ),
       ),
