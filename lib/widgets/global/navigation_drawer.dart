@@ -46,7 +46,7 @@ class NavigationDrawer extends StatelessWidget {
     "/virtualCard",
     "/mySchedule",
     "/diet",
-    "/dashboard",
+    "/bodyChart",
     "/myHistory",
     "/dashboard",
     "/trainers",
