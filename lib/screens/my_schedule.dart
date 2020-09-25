@@ -50,46 +50,74 @@ class MySchedule extends StatelessWidget {
                         ],
                       ),
                       for (int i = 0; i < 4; i++)
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 15),
-                          child: Container(
+                        Dismissible(
+                          key: Key((index + i).toString()),
+                          background: Container(
+                            color: Colors.green,
                             child: Row(
                               children: [
-                                Container(
-                                  child: Icon(
-                                    Icons.ac_unit,
-                                    size: 60,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(12),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey,
-                                        blurRadius: 8
-                                      )
-                                    ]
-                                  ),
+                                SizedBox(
+                                  width: 10,
                                 ),
-                                Expanded(
-                                  child: Column(
-                                    children: [
-                                      AutoSizeText(
-                                        "Flat Bench Press B/B",
-                                        maxLines: 1,
-                                        style:
-                                        GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600,),
-                                      ),
-                                      AutoSizeText(
-                                        "12 x 1  10 x 2  8 x 1  ",
-                                        maxLines: 1,
-                                        style:
-                                        GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.grey),
-                                      ),
-                                    ],
-                                  ),
+                                Icon(
+                                  Icons.access_alarm,
+                                  color: Colors.white,
                                 )
                               ],
+                            ),
+                          ),
+                          secondaryBackground: Container(
+                            color: Colors.blue,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Icon(
+                                  Icons.notifications_active,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                )
+                              ],
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 15),
+                            child: Container(
+                              child: Row(
+                                children: [
+                                  Container(
+                                    child: Icon(
+                                      Icons.ac_unit,
+                                      size: 60,
+                                    ),
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(12),
+                                        boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 8)]),
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        AutoSizeText(
+                                          "Flat Bench Press B/B",
+                                          maxLines: 1,
+                                          style: GoogleFonts.poppins(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                        AutoSizeText(
+                                          "12 x 1  10 x 2  8 x 1  ",
+                                          maxLines: 1,
+                                          style: GoogleFonts.poppins(
+                                              fontSize: 18, fontWeight: FontWeight.w600, color: Colors.grey),
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),
