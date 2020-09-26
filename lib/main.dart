@@ -10,6 +10,7 @@ import 'package:x_gym/provider_models/tab_viewmodel.dart';
 import 'package:x_gym/screens/body_chart.dart';
 import 'package:x_gym/screens/dashboard.dart';
 import 'package:x_gym/screens/diet.dart';
+import 'package:x_gym/screens/exercise_detail_screen.dart';
 import 'package:x_gym/screens/login_screen.dart';
 import 'package:x_gym/screens/my_history.dart';
 import 'package:x_gym/screens/my_schedule.dart';
@@ -71,6 +72,7 @@ class MyApp extends StatelessWidget {
         "/myHistory" : (context) => MyHistory(),
         "/trainers" : (context) => Trainers(),
         "/bodyChart" : (context) => BodyChart(),
+        "/exerciseDetails" : (context) => ExerciseDetailScreen(),
       },
       home: LoginScreen(),
     );

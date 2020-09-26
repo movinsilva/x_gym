@@ -6,6 +6,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:x_gym/constants/args/exercise_detail_args.dart';
 import 'package:x_gym/provider_models/my_schedule_viewmodel.dart';
 import 'package:x_gym/widgets/widgets_library.dart';
 
@@ -24,34 +25,15 @@ class MySchedule extends StatelessWidget {
                 itemBuilder: (context, index) => Container(
                   child: Column(
                     children: [
-                      Row(
-                        children: [
-                          SizedBox(
-                            width: 15,
-                          ),
-                          AutoSizeText(
-                            "Chest",
-                            maxLines: 1,
-                            style:
-                                GoogleFonts.poppins(fontSize: 30, fontWeight: FontWeight.w600, color: Colors.grey[400]),
-                          ),
-                          SizedBox(
-                            width: 20,
-                          ),
-                          Expanded(
-                            child: Container(
-                              height: 4,
-                              color: Colors.grey[400],
-                            ),
-                          ),
-                          SizedBox(
-                            width: 20,
-                          )
-                        ],
-                      ),
+                      HeaderWithRightLine(title: "Chest"),
                       for (int i = 0; i < 4; i++)
                         Dismissible(
                           key: Key((index + i).toString()),
+                          confirmDismiss: (direction) async {
+                            Navigator.pushNamed(context, "/exerciseDetails",
+                                arguments: ExerciseDetailArgs("Flat Bench Press B/B", "Chest", [12, 10, 8], [1, 2, 1]));
+                            return false;
+                          },
                           background: Container(
                             color: Colors.green,
                             child: Row(
