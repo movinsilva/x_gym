@@ -18,13 +18,13 @@ class MeasurementBoxes extends StatelessWidget {
     return
       GridView.count(
         crossAxisCount: 2,
+        childAspectRatio: 1.05,
         children: List.generate(6, (index) {
           return Container(
             margin: const EdgeInsets.only( left: 15,right: 12,bottom: 40),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(Radius.circular(35)),
-
               boxShadow: [
                 BoxShadow(
                   color: Colors.orange[100],
@@ -53,6 +53,7 @@ class MeasurementBoxes extends StatelessWidget {
                   ),
                   AutoSizeText(
                     "68.75 " + bodyMeasurementUnits[index],
+                    maxLines: 1,
                     style: GoogleFonts.poppins(
                       fontSize: 26,
                       color: Colors.black87,

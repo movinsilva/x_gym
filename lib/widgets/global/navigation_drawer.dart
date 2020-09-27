@@ -48,7 +48,7 @@ class NavigationDrawer extends StatelessWidget {
     "/diet",
     "/bodyChart",
     "/myHistory",
-    "/dashboard",
+    "/allExercises",
     "/trainers",
     "/promotions",
     "/notices",
