@@ -5,22 +5,15 @@ import '../../widgets_library.dart';
 class Measurements extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Column(
       children: <Widget>[
         MeasurementsGraph(),
-        // GridView.count(
-        //           crossAxisCount: 2,
-        //           children: <Widget>[
-        //             Container(
-        //               height: 150,
-        //               width: 300,
-        //               decoration: BoxDecoration(
-        //                 color: Colors.orange[200]
-        //               ),
-        //             )
-        //           ],
-        //
-        //         ),
+        Container(
+          height: size.height*0.42,
+          child:
+          MeasurementBoxes(),
+        )
       ],
     );
   }

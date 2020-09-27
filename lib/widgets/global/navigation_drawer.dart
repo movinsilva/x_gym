@@ -17,7 +17,7 @@ class NavigationDrawer extends StatelessWidget {
     "Diet Schedule",
     "Body Chart",
     "My History",
-    "All Schedules",
+    "All Exercises",
     "Trainers",
     "Promotions",
     "Notices",

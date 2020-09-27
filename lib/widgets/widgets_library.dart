@@ -25,4 +25,6 @@ export 'package:x_gym/widgets/screens/my_history/attendance.dart';
 export 'package:x_gym/widgets/screens/my_history/payments.dart';
 export 'package:x_gym/widgets/screens/my_history/measurements.dart';
 export 'package:x_gym/widgets/screens/my_history/measurementsGraph.dart';
+export 'package:x_gym/widgets/screens/my_history/measurement_boxes.dart';
+
 
