@@ -8,6 +8,8 @@ import 'package:x_gym/widgets/widgets_library.dart';
 class ExerciseDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    // arguments for passed from the route
     final ExerciseDetailArgs args = ModalRoute.of(context).settings.arguments;
 
     return DefaultScaffold(
@@ -22,7 +24,7 @@ class ExerciseDetailScreen extends StatelessWidget {
             child: AutoSizeText(
               args.exerciseName,
               style: GoogleFonts.poppins(
-                  color: Colors.black87, fontSize: 30, fontWeight: FontWeight.w600, letterSpacing: 0.6),
+                  color: Colors.black87, fontSize: 25, fontWeight: FontWeight.w600, letterSpacing: 0.6),
               maxLines: 1,
             ),
           ),
@@ -80,7 +82,7 @@ class ExerciseDetailScreen extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                         child: Text(
-                          "Start",
+                          "End",
                           style: GoogleFonts.poppins(
                               fontSize: 25, fontWeight: FontWeight.w600, color: Colors.white, letterSpacing: 1),
                         ),
@@ -101,19 +103,61 @@ class ExerciseDetailScreen extends StatelessWidget {
           SizedBox(
             height: 15,
           ),
-          Container(
-            height: 500,
-            width: 200,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey,
-                  blurRadius: 15
+          Expanded(
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 15
+                    ),
+                  ],
+                  borderRadius: BorderRadius.circular(25)
                 ),
-              ],
-              borderRadius: BorderRadius.circular(25)
+              ),
             ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              AutoSizeText(
+                "Total : ",
+                style: GoogleFonts.poppins(fontSize: 30, fontWeight: FontWeight.w600, color: Colors.grey[400]),
+              ),
+              AutoSizeText(
+                "00:00:00",
+                style: GoogleFonts.poppins(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w200,
+                ),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SizedBox(
+                width: 15,
+              ),
+              AutoSizeText(
+                "Up next : ",
+                style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.grey[400]),
+              ),
+              AutoSizeText(
+                "Incline Bench Press B/B",
+                style: GoogleFonts.poppins(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                ),
+                maxLines: 1,
+              ),
+            ],
           )
         ],
       ),

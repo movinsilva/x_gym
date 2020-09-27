@@ -29,14 +29,11 @@ class DefaultScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Get the size of the current screen
-    final size = MediaQuery
-        .of(context)
-        .size;
+    final size = MediaQuery.of(context).size;
 
     // Get the instance for the
     // global key in the scaffold
     var scaffoldKey = GlobalKey<ScaffoldState>();
-
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -47,77 +44,74 @@ class DefaultScaffold extends StatelessWidget {
         child: FittedBox(
           fit: BoxFit.scaleDown,
           child: Container(
-              width: size.width,
-              height: size.height,
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 40,
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                        flex: 5,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                IconButton(
-                                  icon: Icon(Icons.format_align_center),
-                                  onPressed: () {
-                                    scaffoldKey.currentState.openDrawer();
-                                  },
-                                ),
-                                Spacer(),
-                                Text(
-                                  "Fitness.lk",
-                                  style: GoogleFonts.poppins(fontSize: 25),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              height: 12,
-                            ),
-                            Container(
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                  color: Pallete.DefaultThemeColour,
-                                  borderRadius:
-                                  BorderRadius.only(topRight: Radius.circular(25),
-                                      bottomRight: Radius.circular(25))),
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 16, right: 25, top: 3, bottom: 3),
-                                child: AutoSizeText(
-                                  title,
-                                  maxLines: 1,
-                                  style: GoogleFonts.poppins(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 30,
-                                  ),
+            width: size.width,
+            height: size.height,
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 40,
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      flex: 5,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              IconButton(
+                                icon: Icon(Icons.format_align_center),
+                                onPressed: () {
+                                  scaffoldKey.currentState.openDrawer();
+                                },
+                              ),
+                              Spacer(),
+                              Text(
+                                "Fitness.lk",
+                                style: GoogleFonts.poppins(fontSize: 25),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 12,
+                          ),
+                          Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                                color: Pallete.DefaultThemeColour,
+                                borderRadius:
+                                    BorderRadius.only(topRight: Radius.circular(25), bottomRight: Radius.circular(25))),
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 16, right: 25, top: 3, bottom: 3),
+                              child: AutoSizeText(
+                                title,
+                                maxLines: 1,
+                                style: GoogleFonts.poppins(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 30,
                                 ),
                               ),
-                            )
-                          ],
-                        ),
+                            ),
+                          )
+                        ],
                       ),
-                      Expanded(
-                          flex: 3, child: Image.asset("assets/black_logo.png"))
-                    ],
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  Expanded(
-                    child: interior,
-                  ), // Expanded(child: interior)
-                ],
-              ),
+                    ),
+                    Expanded(flex: 3, child: Image.asset("assets/black_logo.png"))
+                  ],
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Expanded(
+                  child: interior,
+                ),
+              ],
+            ),
           ),
         ),
       ),
