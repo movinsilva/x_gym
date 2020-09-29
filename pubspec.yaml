@@ -35,6 +35,11 @@ dependencies:
   path_provider:
   # for the state management
   provider: ^4.3.2+2
+  #for the circular bar
+  circle_wave_progress: ^0.0.4
+  #for progress shapes
+  step_progress_indicator: ^0.2.4+7
+
 
 dev_dependencies:
   flutter_test:

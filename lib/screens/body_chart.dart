@@ -18,9 +18,22 @@ class BodyChart extends StatelessWidget {
 
     return DefaultScaffold(
       title: "Body Chart",
-      interior: Container(
-        margin: const EdgeInsets.all(10),
-        child: MeasurementBoxes(),
+      interior: Expanded(
+        child: Column(
+          children: <Widget>[
+            Container(
+              height: size.height*0.7,
+              margin: const EdgeInsets.all(10),
+              child: MeasurementBoxes(),
+            ),
+            AutoSizeText(
+              "*Tap a box to add a new measurement",
+              style: GoogleFonts.poppins(
+                
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

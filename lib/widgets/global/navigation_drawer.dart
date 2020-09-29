@@ -21,7 +21,7 @@ class NavigationDrawer extends StatelessWidget {
     "Trainers",
     "Promotions",
     "Notices",
-    "About Us",
+    "Home",
     "Settings",
     "Help"
   ];
@@ -36,7 +36,7 @@ class NavigationDrawer extends StatelessWidget {
     Icons.people,
     Icons.notifications,
     Icons.notifications_active,
-    Icons.screen_share,
+    Icons.home,
     Icons.settings,
     Icons.help
   ];
@@ -52,7 +52,7 @@ class NavigationDrawer extends StatelessWidget {
     "/trainers",
     "/promotions",
     "/notices",
-    "/dashboard",
+    "/home",
     "/dashboard",
     "/dashboard",
   ];

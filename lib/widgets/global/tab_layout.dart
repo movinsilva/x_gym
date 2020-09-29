@@ -14,7 +14,7 @@ class TabLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<TabViewModel>(
       builder: (context, model, widget) => Container(
-        height: 60,
+        height: 45,
         child: ListView.builder(
           itemCount: list.length,
           scrollDirection: Axis.horizontal,

@@ -13,20 +13,25 @@ class MyHistory extends StatelessWidget {
       title: "My History",
       interior: Column(
         children: <Widget>[
-          TabLayout(["Attendance", "Measurements", "Diet", "Payments"]),
+          TabLayout(["Attendance", "Measurements", "Payments", "Schedules", "Diet"]),
           Consumer<TabViewModel>(
-              builder: (context, model, widget) {
-                switch (model.index) {
-                  case 0:
-                    return Attendance();
-                  case 1:
-                    return Measurements();
-                  case 3:
-                    return Payments();
-                  default:
-                    return Placeholder();
-                }
-              }),
+            builder: (context, model, widget) {
+              switch (model.index) {
+                case 0:
+                  return Attendance();
+                case 1:
+                  return Measurements();
+                case 2:
+                  return Payments();
+                case 3:
+                  return Schedules();
+                case 4:
+                  return Diet();
+                default:
+                  return Placeholder();
+              }
+            },
+          ),
         ],
       ),
     );

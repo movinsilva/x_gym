@@ -6,12 +6,14 @@ import 'package:provider/provider.dart';
 import 'package:x_gym/provider_models/dashboard_viewmodel.dart';
 import 'package:x_gym/provider_models/my_history_viewmodel.dart';
 import 'package:x_gym/provider_models/my_schedule_viewmodel.dart';
+import 'package:x_gym/provider_models/second_tab_viewmodel.dart';
 import 'package:x_gym/provider_models/tab_viewmodel.dart';
 import 'package:x_gym/screens/all_exercises.dart';
 import 'package:x_gym/screens/body_chart.dart';
 import 'package:x_gym/screens/dashboard.dart';
 import 'package:x_gym/screens/diet.dart';
 import 'package:x_gym/screens/exercise_detail_screen.dart';
+import 'package:x_gym/screens/home.dart';
 import 'package:x_gym/screens/login_screen.dart';
 import 'package:x_gym/screens/my_history.dart';
 import 'package:x_gym/screens/my_schedule.dart';
@@ -32,7 +34,8 @@ void main() {
         ChangeNotifierProvider(create: (_) => DashboardViewModel()),
         ChangeNotifierProvider(create: (_) => MyHistoryViewModel(),),
         ChangeNotifierProvider(create: (_) => MyScheduleViewModel(),),
-        ChangeNotifierProvider(create: (_) => TabViewModel(),)
+        ChangeNotifierProvider(create: (_) => TabViewModel(),),
+        ChangeNotifierProvider(create: (_) => SecondeTabViewmodel(),)
       ],
       child: MyApp(),
     ),
@@ -59,6 +62,7 @@ class MyApp extends StatelessWidget {
     ));
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.orange,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -76,6 +80,7 @@ class MyApp extends StatelessWidget {
         "/bodyChart" : (context) => BodyChart(),
         "/exerciseDetails" : (context) => ExerciseDetailScreen(),
         "/allExercises" : (context) => AllExercises(),
+        "/home" : (context) => Home(),
       },
       home: LoginScreen(),
     );

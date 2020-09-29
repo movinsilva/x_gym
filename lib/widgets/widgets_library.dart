@@ -26,5 +26,7 @@ export 'package:x_gym/widgets/screens/my_history/payments.dart';
 export 'package:x_gym/widgets/screens/my_history/measurements.dart';
 export 'package:x_gym/widgets/screens/my_history/measurementsGraph.dart';
 export 'package:x_gym/widgets/screens/my_history/measurement_boxes.dart';
+export 'package:x_gym/widgets/screens/my_history/schedules.dart';
+export 'package:x_gym/widgets/screens/my_history/diet.dart';
 
 
