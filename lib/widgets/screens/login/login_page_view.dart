@@ -4,10 +4,12 @@
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:x_gym/constants/runtime_constants.dart';
-import 'package:x_gym/database_helper/database_helper.dart';
+import 'package:x_gym/provider/all_exercises_api_provider.dart';
+import 'package:x_gym/provider/db_provider.dart';
 import 'package:x_gym/styles/Pallete.dart';
 import 'package:x_gym/widgets/widgets_library.dart';
 
@@ -56,6 +58,10 @@ class LoginPageView extends StatelessWidget {
               ),
               InkWell(
                 onTap: (){
+
+                  AllExercisesApiProvider allExercises = new AllExercisesApiProvider();
+                  allExercises.getAllExercises();
+                  // DBProvider.db.getAllExercises();
                   Navigator.of(context).pushNamed("/dashboard");
                   RuntimeConstants.currentPageName = "Dashboard" ;
 
@@ -90,7 +96,51 @@ class LoginPageView extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 70,
+                height: 30,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  AutoSizeText(
+                    "Continue as a guest",
+                    style: GoogleFonts.poppins(color: Colors.white,
+                        fontSize: 15),
+                  ),
+                  AutoSizeText(
+                    ">>",
+                    style: GoogleFonts.poppins(color: Colors.white,
+                        fontSize: 35,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context). pushNamed("/register");
+                    },
+                    child: Container(
+                      width: size.width*0.2,
+                      height: 45,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey,
+                        width: 3),
+                        borderRadius: BorderRadius.all(Radius.circular(15)),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Guest",
+                          style: GoogleFonts.poppins(
+                              color: Pallete.DefaultThemeColour,
+                              fontWeight: FontWeight.w700,
+                            fontSize: 18
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+
+              SizedBox(
+                height: 30,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -111,7 +161,7 @@ class LoginPageView extends StatelessWidget {
                       Navigator.of(context). pushNamed("/register");
                     },
                     child: Container(
-                      width: size.width*0.2,
+                      width: size.width*0.22,
                       height: 45,
                       decoration: BoxDecoration(
                         color: Pallete.DefaultThemeColour,
@@ -122,7 +172,8 @@ class LoginPageView extends StatelessWidget {
                           "Register",
                           style: GoogleFonts.poppins(
                             color: Colors.white,
-                            fontWeight: FontWeight.w600
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16
                           ),
                         ),
                       ),

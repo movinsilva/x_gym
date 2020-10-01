@@ -10,21 +10,21 @@ import 'package:x_gym/widgets/screens/login/login_page_view.dart';
 class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
       backgroundColor: Colors.transparent,
-        body: Container(
-          width: size.width,
-          height: size.height,
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.fill,
+      body: Container(
+        width: size.width,
+        height: size.height,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.cover,
             image: AssetImage("assets/login_bg_image.png"),
-          )),
-          child: LoginPageView(),
+          ),
         ),
+        child: LoginPageView(),
+      ),
     );
   }
 }
